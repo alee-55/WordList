@@ -24,8 +24,32 @@ while r2 < rows-1:
     words.append(str(data[r2,6]))
     r2= r2+1       
 ...
-print(words) #check that you collected all the letters in your data file
+print(words) 
 
-assert len(words) == num_letters(rows, columns) 
+assert len(words) == num_letters(rows, columns)
 
-  #this should not throw an error. If it does, most likely your main code is not getting the correct number of letters
+### Part 4
+
+words2 = [] 
+rows, columns = data.shape  
+c1=0
+while c1 < columns-1:
+    words2.append(str(data[0,c1])+str(data[0,c1+1]))
+    c1= c1+1
+c2=0
+while c2 < columns-1:
+    words2.append(str(data[5,c2])+str(data[5,c2+1]))
+    c2= c2+1
+r1=1
+while r1 < rows-2:
+    words2.append(str(data[r1,0])+str(data[r1+1,0]))
+    r1= r1+1
+r2=1
+while r2 < rows-2:
+    words2.append(str(data[r2,6])+str(data[r2+1,6]))
+    r2= r2+1       
+...
+print(words2) 
+
+assert len(words2) == num_letters(rows, columns)-4
+
